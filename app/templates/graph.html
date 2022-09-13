@@ -1,0 +1,127 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <h2 class="d-flex justify-content-center">Switch-1 Ping Availability</h2>
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script>
+    const ctx = document.getElementById("myChart").getContext("2d");
+    const myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: {{ label1|safe }},
+        datasets: [
+          {
+            label: "IC MP Ping",
+            data: {{data1}},
+            backgroundColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+
+        elements:{
+          point:{
+            radius:0
+          }
+        }
+      },
+    });
+  </script>
+
+  <div class="container d-flex mt-3">
+    <p class="mr-3">min: {{min1}}</p>
+    <p class="mr-3">avg: {{avg1}}</p>
+    <p class="mr-3">max: {{max1}}</p>
+  </div>
+</div>
+<hr />
+<div class="container">
+  <h2 class="d-flex justify-content-center">Switch-2 Ping Availability</h2>
+  <canvas id="myChart2" width="400" height="200"></canvas>
+  <script>
+    const ctx2 = document.getElementById("myChart2").getContext("2d");
+    const myChart2 = new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: {{ label2|safe }},
+        datasets: [
+          {
+            label: "IC MP Ping",
+            data: {{data2}},
+            backgroundColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        elements:{
+          point:{
+            radius:0
+          }
+        }
+      },
+    });
+  </script>
+
+  <div class="container d-flex mt-3">
+    <p class="mr-3">min: {{min2}}</p>
+    <p class="mr-3">avg: {{avg2}}</p>
+    <p class="mr-3">max: {{max2}}</p>
+  </div>
+</div>
+<hr />
+<div class="container">
+  <h2 class="d-flex justify-content-center">Switch-3 Ping Availability</h2>
+  <canvas id="myChart3" width="400" height="200"></canvas>
+  <script>
+    const ctx3 = document.getElementById("myChart3").getContext("2d");
+    const myChart3 = new Chart(ctx3, {
+      type: "line",
+      data: {
+        labels: {{ label3|safe }},
+        datasets: [
+          {
+            label: "IC MP Ping",
+            data: {{data3}},
+            backgroundColor: 'rgba(75, 192, 192, 1)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+
+        },
+        elements:{
+          point:{
+            radius:0
+          }
+        }
+      },
+    });
+  </script>
+
+  <div class="container d-flex mt-3">
+    <p class="mr-3">min: {{min3}}</p>
+    <p class="mr-3">avg: {{avg3}}</p>
+    <p class="mr-3">max: {{max3}}</p>
+  </div>
+</div>
+{% endblock content %}
